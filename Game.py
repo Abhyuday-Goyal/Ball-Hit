@@ -1,6 +1,4 @@
 import tkinter as tk
-
-
 class PlayComponent(object):
     def __init__(self, canvas, item):
         self.item = item
@@ -38,11 +36,7 @@ class Paddle(PlayComponent):
             if self.ball is not None:
                 self.ball.move(dist,0)
    
-            
 
-
-
-                
 class Ball(PlayComponent):
     def __init__(self, canvas, x, y):
         self.radius= 6
@@ -123,8 +117,6 @@ class Game(tk.Frame):
                          lambda _:self.paddle.move(-30))
         self.canvas.bind('<Right>',
                          lambda _:self.paddle.move(30))
-        
-
     def init_game(self):
         self.update_lives_text()
         self.display_ball()
