@@ -120,7 +120,7 @@ class Game(tk.Frame):
         self.init_game()
         self.canvas.focus_set()
         self.canvas.bind('<Left>',
-                         lambda _:self.paddle.move(-30)
+                         lambda _:self.paddle.move(-30))
         self.canvas.bind('<Right>',
                          lambda _:self.paddle.move(30))
         
@@ -148,7 +148,7 @@ class Game(tk.Frame):
     def update_lives_text(self):
         text = 'Lives:%s hits %s' % (self.lives, self.hits)
         if self.hud is None:
-            self.hud= self.draw_text(50, 20, text, 15)
+            self.hud= self.draw_text(70, 20, text, 15)
         else: 
             self.canvas.itemconfig(self.hud, text=text)
         
